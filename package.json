@@ -18,7 +18,7 @@
   "scripts": {
     "start": "node src/server/app.js",
     "develop": "nodemon src/server/app.js",
-    "bundle-js": "browserify src/client/js/app.js"
+    "bundle-js": "browserify src/client/js/app.js > build/client/js/bundle.js"
   },
   "repository": {
     "type": "git",

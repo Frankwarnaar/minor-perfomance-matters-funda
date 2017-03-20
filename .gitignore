@@ -1,3 +1,5 @@
 node_modules/
-dist/
+build/
 .env
+cfg.js
+npm-debug.log

@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 
-const config = require('../../../../../cfg.js');
+const config = require('./cfg.js');
 const Controller = require('./Controller.js');
 const View = require('./View.js');
 const Store = require('./Store.js');
