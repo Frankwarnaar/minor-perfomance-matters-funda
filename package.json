@@ -12,10 +12,13 @@
     "request": "^2.81.0",
     "url": "^0.11.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "browserify": "^14.1.0"
+  },
   "scripts": {
     "start": "node src/server/app.js",
-    "develop": "nodemon src/server/app.js"
+    "develop": "nodemon src/server/app.js",
+    "bundle-js": "browserify src/client/js/app.js"
   },
   "repository": {
     "type": "git",
