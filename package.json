@@ -4,9 +4,11 @@
   "description": "",
   "main": "src/server/app.js",
   "dependencies": {
+    "body-parser": "^1.17.1",
+    "dotenv": "^4.0.0",
     "ejs": "^2.5.6",
     "express": "^4.15.2",
-    "express-ejs-extend": "0.0.1",
+    "express-ejs-extend": "0.0.1"
   },
   "devDependencies": {},
   "scripts": {
