@@ -11,10 +11,8 @@ const searchRouter = require('./routes/search');
 const config = require('../../cfg.js');
 
 if (!config.funda.key || !config.google.key || !config.geoNames.userName) {
-  throw new Error('Missing apikey in env.');
+	throw new Error('Missing apikey in env.');
 }
-
-console.log(config);
 
 app.engine('ejs', require('express-ejs-extend'));
 app.set('views', path.join(__dirname, './views'));

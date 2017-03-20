@@ -1,7 +1,13 @@
 <% extend("_base/layout") %>
 
-<form method="POST" action="/search">
+<form method="GET" action="/search">
 	<label>Postcode
 		<input type="text" name="postal"/>
+	</label>
+	<label>Type
+		<select name="type">
+			<option value="koop">Koop</option>
+			<option value="huur">Huur</option>
+		</select>
 	</label>
 </form>
