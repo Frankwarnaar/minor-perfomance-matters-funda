@@ -1,0 +1,43 @@
+<% extend("_base/layout") %>
+
+<section class="object">
+	<section class="object__images">
+		<img src="<%= object.HoofdFoto %>" alt="<%= object.Adres %>">
+		<section>
+			<% object.Media.map(picture => { %>
+				<% const bigPic = picture.MediaItems.filter(source => { %>
+					<% if (source.Url.includes('middel')) { %>
+						<% return source.Url; %>
+					<% } else if (source.Url.includes('groot')) { %>
+						<% return source.Url; %>
+					<% } else if (source.Url.includes('grotere')) { %>
+						<% return source.Url; %>
+					<% } %>
+				<% }); %>
+
+				<% picture.MediaItems.map(source => { %>
+					<% if (source.Url.includes('middel')) { %>
+						<% if (bigPic.length > 0) { %>
+							<a href="<%= bigPic[bigPic.length - 1].Url %>">
+								<img src="<%= source.Url %>" alt="<%= object.Adres %>">
+							</a>
+						<% } %>
+					<% } %>
+				<% }); %>
+			<% }); %>
+		</section>
+	</section>
+	<section>
+		<h1><%= object.Adres %></h1>
+		<h2><%= object.Postcode %> <%= object.Plaats %></h2>
+		<dl>
+			<dt>Prijs:</dt><dd><strong>€
+			<%= object.Koopprijs ? object.Koopprijs : object.Huurprijs %>
+			</strong></dd>
+			<dt>Aantal kamers:</dt><dd><%= object.AantalKamers %></dd>
+			<dt>Aantal badkamers:</dt><dd><%= object.AantalBadkamers %></dd>
+			<dt>Bouwjaar:</dt><dd><%= object.Bouwjaar %></dd>
+			<dt>Oppervlakte:</dt><dd><%= object.WoonOppervlakte %> m<sup>2</sup></dd>
+		</dl>
+	</section>
+</section>

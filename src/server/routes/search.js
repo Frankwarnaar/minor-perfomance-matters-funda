@@ -7,10 +7,11 @@ const config = require('../../../cfg.js');
 
 router.get('/', (req, res) => {
 	const queries = url.parse(req.url, true).query;
-	const postal = queries.postal;
+	const city = queries.city;
 	const type = queries.type;
 
-	request.get(`${config.funda.baseUrls.search}/${config.funda.key}?type=${type}&zo=/${postal}/+1km`, (err, response, body) => {
+
+	request.get(`${config.funda.baseUrls.search}/${config.funda.key}?type=${type}&zo=/${city}/+1km`, (err, response, body) => {
 		const results = JSON.parse(body);
 		console.log(results.Metadata);
 		res.render("search", {
