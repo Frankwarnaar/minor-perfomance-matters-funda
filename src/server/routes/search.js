@@ -11,10 +11,11 @@ router.get('/', (req, res) => {
 	const type = queries.type;
 
 	request.get(`${config.funda.baseUrls.search}/${config.funda.key}?type=${type}&zo=/${postal}/+1km`, (err, response, body) => {
-		console.log(JSON.parse(body));
+		const results = JSON.parse(body);
+		console.log(results.Metadata);
 		res.render("search", {
-			meta: body.Metadata,
-			objects: body.Objects
+			meta: results.Metadata,
+			objects: results.Objects
 		});
 	});
 });

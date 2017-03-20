@@ -7,6 +7,7 @@ const port = 3000;
 const baseDir = 'build/client';
 
 const searchRouter = require('./routes/search');
+const detailsRouter = require('./routes/details');
 
 const config = require('../../cfg.js');
 
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // Connect the routers to routes
 app.use('/search', searchRouter);
+app.use('/details', detailsRouter);
 
 app.get('/', (req, res) => {
 	res.render("index");
