@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/server/app.js",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.15.2"
+  },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/server/app.js",
+	"develop": "nodemon src/server/app.js"
   },
   "repository": {
     "type": "git",
