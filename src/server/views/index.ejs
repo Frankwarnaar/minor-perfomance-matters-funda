@@ -1,0 +1,27 @@
+<% extend("_base/layout") %>
+
+<section class="results hidden" id="results" data-page>
+	<h1>Huizen bij u in de buurt</h1>
+	<form>
+		<section>
+			<h2>Sorteer op:</h2>
+			<select id="sort">
+				<option disabled selected value>Selecteer een optie</option>
+				<option value="Koopprijs">Prijs</options>
+				<option value="Woonoppervlakte">Vierkante meters</options>
+				<option value="Adres">Straatnaam</options>
+			</select>
+		</section>
+
+		<section>
+			<h2>Filter op:</h2>
+			<input type="checkbox" name="type" id="koop" checked value="koop"/>
+			<label for="koop">Koop</label>
+
+			<input type="checkbox" name="type" checked id="huur" value="huur"/>
+			<label for="huur">Huur</label>
+		</section>
+	</form>
+	<ul id="results-list"></ul>
+	<p class="hidden">Er zijn geen resultaten gevonden</p>
+</section>
