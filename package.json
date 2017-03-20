@@ -1,0 +1,21 @@
+{
+  "name": "funda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server/app.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frankwarnaar/minor-perfomance-matters-funda.git"
+  },
+  "author": "Frank Warnaar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Frankwarnaar/minor-perfomance-matters-funda/issues"
+  },
+  "homepage": "https://github.com/Frankwarnaar/minor-perfomance-matters-funda#readme"
+}
