@@ -52,7 +52,8 @@ router.get('/:id/:type', (req, res) => {
 		res.render("details", {
 			object: object,
 			gallery: gallery,
-			description: description
+			description: description,
+			critical: 'detail'
 		});
 	});
 });

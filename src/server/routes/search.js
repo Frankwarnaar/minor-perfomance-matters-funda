@@ -10,13 +10,12 @@ router.get('/', (req, res) => {
 	const city = queries.city;
 	const type = queries.type;
 
-
 	request.get(`${config.funda.baseUrls.search}/${config.funda.key}?type=${type}&zo=/${city}/+1km`, (err, response, body) => {
 		const results = JSON.parse(body);
-		console.log(results.Metadata);
 		res.render("search", {
 			meta: results.Metadata,
-			objects: results.Objects
+			objects: results.Objects,
+			critical: 'search'
 		});
 	});
 });

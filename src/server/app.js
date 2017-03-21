@@ -29,7 +29,9 @@ app.use('/search', searchRouter);
 app.use('/details', detailsRouter);
 
 app.get('/', (req, res) => {
-	res.render("index");
+	res.render("index", {
+		critical: 'index'
+	});
 });
 
 app.listen(port, (err) => {

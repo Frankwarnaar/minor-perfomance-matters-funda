@@ -13,12 +13,15 @@
     "url": "^0.11.0"
   },
   "devDependencies": {
-    "browserify": "^14.1.0"
+    "browserify": "^14.1.0",
+    "ngrok": "^2.2.6"
   },
   "scripts": {
     "start": "node src/server/app.js",
     "develop": "nodemon src/server/app.js",
-    "bundle-js": "browserify src/client/js/app.js > build/client/js/bundle.js"
+    "expose": "ngrok http 3000",
+    "bundle-js": "browserify src/client/js/app.js > build/client/js/bundle.js",
+    "critical-css": "critical src/server/views/index.ejs --base build/client/css > build/client/css/app.css"
   },
   "repository": {
     "type": "git",
