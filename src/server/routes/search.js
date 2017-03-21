@@ -5,7 +5,7 @@ const url = require('url');
 
 const config = require('../../../cfg.js');
 
-router.get('/', (req, res) => {
+router.get('/q', (req, res) => {
 	const queries = url.parse(req.url, true).query;
 	const city = queries.city;
 	const type = queries.type;

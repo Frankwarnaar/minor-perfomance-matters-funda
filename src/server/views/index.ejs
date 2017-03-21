@@ -1,6 +1,6 @@
 <% extend("_base/layout") %>
 
-<form method="GET" action="/search">
+<form method="GET" action="/search/q">
 	<label>Stad
 		<input type="text" name="city"/>
 	</label>
@@ -11,3 +11,18 @@
 		</select>
 	</label>
 </form>
+<footer id="footer" class="hidden">
+	<form method="GET" action="/search/coords">
+		<h2>Huizen dichtbij u</h2>
+		<input name="lat" type="hidden" id="lat">
+		<input name="long" type="hidden" id="long">
+		<label>Type
+			<select name="typeLocation">
+				<option value="koop">Koop</option>
+				<option value="huur">Huur</option>
+			</select>
+		</label>
+		<input type="submit" value="Zoek"/>
+	</form>
+</footer>
+<script src="/js/bundle.js" type="text/javascript" defer></script>
