@@ -1,6 +1,7 @@
 {
 	"esversion": 6,
 	"globals": {
-		"require": true
+		"require": true,
+		"module": true
 	}
 }
