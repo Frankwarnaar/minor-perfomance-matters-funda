@@ -1,0 +1,29 @@
+body > footer {
+	padding: 0;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	min-height: 3rem;
+	width: 100%;
+	background: @color-gray-clouds;
+
+	form {
+		padding: 0 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+
+		> * {
+			padding: 0 1rem;
+			line-height: 3rem;
+		}
+
+		input[type="submit"] {
+			margin-top: .25rem;
+		}
+
+		h2 {
+			margin: 0;
+		}
+	}
+}
