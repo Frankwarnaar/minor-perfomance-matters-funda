@@ -3,6 +3,18 @@ const View = require('./View.js');
 
 class App {
 	constructor() {
+		this.$ = {
+			body: document.querySelector('body'),
+			footer: document.getElementById('footer'),
+			lat: document.getElementById('lat'),
+			long: document.getElementById('long'),
+			carousel: document.querySelector('.object__images'),
+			carouselImages: document.querySelectorAll('.object__images a'),
+			modal: document.querySelector('.modal'),
+			modalImage: document.querySelector('.modal img'),
+			modalClose: document.querySelector('.modal button')
+		};
+
 		this.controller = new Controller(this);
 		this.view       = new View(this);
 		this.init();
