@@ -5,6 +5,7 @@
   "main": "src/server/app.js",
   "dependencies": {
     "body-parser": "^1.17.1",
+    "compression": "^1.6.2",
     "dotenv": "^4.0.0",
     "ejs": "^2.5.6",
     "express": "^4.15.2",
@@ -23,16 +24,16 @@
     "watchify": "^3.9.0"
   },
   "scripts": {
-	"start": "npm run server & npm run watch",
-	"server": "nodemon --harmony_array_includes src/server/app.js",
+    "start": "npm run server & npm run watch",
+    "server": "nodemon --harmony_array_includes src/server/app.js",
     "production": "npm run build && node --harmony_array_includes src/server/app.js",
     "expose": "ngrok http 3000",
     "js": "browserify src/client/js/app.js > build/client/js/bundle.js -t [ babelify --presets [es2015] ]",
     "watch:js": "watchify src/client/js/app.js --debug -o build/client/js/bundle.js -t [ babelify --presets [es2015] ]",
     "less": "lessc src/client/styles/app.less build/client/css/app.css",
     "watch:less": "less-watch-compiler ./src/client/styles build/client/css app.less",
-	"build": "npm run less && npm run js",
-	"watch": "npm run watch:js & npm run watch:less"
+    "build": "npm run less && npm run js",
+    "watch": "npm run watch:js & npm run watch:less"
   },
   "repository": {
     "type": "git",

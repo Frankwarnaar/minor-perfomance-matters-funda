@@ -3,6 +3,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const compression = require('compression');
 
 const app = express();
 const port = 3000;
@@ -21,6 +22,7 @@ app.engine('ejs', require('express-ejs-extend'));
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'ejs');
 
+app.use(compression());
 app.use(express.static(baseDir));
 app.use(bodyParser.urlencoded({extended: true}));
 
