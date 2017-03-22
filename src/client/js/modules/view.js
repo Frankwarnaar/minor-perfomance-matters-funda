@@ -9,7 +9,6 @@ class View {
 	}
 
 	render(coords) {
-		console.log(coords);
 		this.$.footer.className = '';
 		this.$.lat.value = coords.latitude;
 		this.$.long.value = coords.longitude;

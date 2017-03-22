@@ -1,16 +1,18 @@
 <% extend("_base/layout") %>
 
-<form method="GET" action="/search/q">
-	<label>Stad
-		<input type="text" name="city"/>
-	</label>
-	<label>Type
-		<select name="type">
-			<option value="koop">Koop</option>
-			<option value="huur">Huur</option>
-		</select>
-	</label>
-</form>
+<div class="flex--center">
+	<form method="GET" action="/search/q">
+		<label>Type
+			<select name="type">
+				<option value="koop">Koop</option>
+				<option value="huur">Huur</option>
+			</select>
+		</label>
+		<label>Stad
+			<input type="text" name="city"/>
+		</label>
+	</form>
+</div>
 <footer id="footer" class="hidden">
 	<form method="GET" action="/search/coords">
 		<h2>Huizen dichtbij u</h2>
