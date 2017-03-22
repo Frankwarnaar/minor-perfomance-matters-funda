@@ -13,7 +13,7 @@ class Controller {
 	housesNearby() {
 		if (this.app.$.footer) {
 			this.app.getCoords().then(coords => {
-				this.app.view.render(coords);
+				this.app.view.renderCoords(coords);
 			});
 		}
 	}
@@ -28,10 +28,12 @@ class Controller {
 			});
 		}
 
-		this.app.$.modalClose.addEventListener('click', () => {
-			console.log(this.app.view);
-			this.app.view.closeModal();
-		});
+		if (this.app.$.modalClose) {
+			this.app.$.modalClose.addEventListener('click', () => {
+				console.log(this.app.view);
+				this.app.view.closeModal();
+			});
+		}
 	}
 }
 
