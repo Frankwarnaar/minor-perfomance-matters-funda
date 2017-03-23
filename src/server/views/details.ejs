@@ -39,6 +39,18 @@
 			<dt>Bouwjaar:</dt><dd><%= object.Bouwjaar %></dd>
 			<dt>Oppervlakte:</dt><dd><%= object.WoonOppervlakte %> m<sup>2</sup></dd>
 		</dl>
+		<% descriptions.map(part => { %>
+			<% if (part[0] === '-') { %>
+				<li><%= part.substr(1, part.length - 1) %></li>
+			<% } else if (part[part.length - 2] === ':') { %>
+				<h3><%= part %></h3>
+			<% } else { %>
+				<p><%= part %></p>
+			<% } %>
+		<% }); %>
+		const description = descriptions.reduce((buffer, item) => {
+
+		});
 	</section>
 </section>
 <section class="modal hidden">
