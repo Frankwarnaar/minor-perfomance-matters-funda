@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const router = express.Router();
 const request = require('request');
@@ -33,26 +35,15 @@ router.get('/:id/:type', (req, res) => {
 		});
 
 		// Filter description
-		var descriptions = object.VolledigeOmschrijving.split('\n');
+		let descriptions = object.VolledigeOmschrijving.split('\n');
 		descriptions = descriptions.filter(item => {
 			return item.length > 0;
-		});
-
-		// Structure description
-		const description = descriptions.reduce((buffer, item) => {
-			if (item[0] === '-') {
-				return `${buffer} <li>${item.substr(1, item.length - 1)}</li>`;
-			} if (item[item.length - 2] === ':') {
-				return `${buffer} <h3>${item}</h3>`;
-			} else {
-				return `${buffer} <p>${item}</p>`;
-			}
 		});
 
 		res.render("details", {
 			object: object,
 			gallery: gallery,
-			description: description,
+			descriptions: descriptions,
 			critical: 'detail'
 		});
 	});
