@@ -8,6 +8,9 @@ serviceWorker = {
 			.then(cache => cache.addAll([
 				'/css/app.css',
 				'/js/bundle.js',
+				'/fonts/proximanova/proximanova-regular.woff2',
+				'/fonts/proximanova/proximanova-semibold.woff2',
+				'/img/logos/funda.svg'
 			]))
 			.then(self.skipWaiting())
 		));
@@ -23,7 +26,7 @@ serviceWorker = {
 			} else {
 				event.respondWith(
 					fetch(req)
-					.catch(err => coreFiles.fetch(req.url))
+					.catch(err => this.coreFiles.fetch(req.url))
 				);
 			}
 		});
@@ -43,9 +46,9 @@ serviceWorker = {
 			return res;
 		},
 		getCached(req) {
-			return caches.opne('funda-v1-pages')
-				.then(cache => cache.match(request))
-				.then(response => response ? response : Promise.reject());
+			return caches.open('funda-v1-pages')
+				.then(cache => cache.match(req))
+				.then(res => res ? res : Promise.reject());
 		}
 	}
 };
