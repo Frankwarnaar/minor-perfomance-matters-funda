@@ -103,4 +103,8 @@ npm run watch:less
 ```
 
 ## Watch
+
 Watch ```.js``` files and ```.less``` files for changes.
+```
+$ npm run watch
+```
