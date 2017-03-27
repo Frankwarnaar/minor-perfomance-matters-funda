@@ -34,6 +34,12 @@ app.get('/sw.js', (req, res) => {
 	res.sendFile('client/js/sw.js', {root: './build'});
 });
 
+app.get('/offline', (req, res) => {
+	res.render('offline', {
+		critical: 'index'
+	});
+});
+
 app.get('/', (req, res) => {
 	res.render("index", {
 		critical: 'index'

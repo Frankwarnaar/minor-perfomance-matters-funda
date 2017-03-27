@@ -1,0 +1,16 @@
+<% extend("_base/layout") %>
+
+<div class="flex--center">
+	<section>
+		<h1>Offline</h1>
+		<p>Momenteel kunt u helaas geen verbinding opzetten met de server, doordat u geen internet heeft of doordat onze server momenteel niet reageert. Probeert u het later nog eens.<p>
+	</section>
+</div>
+
+<%# <script src="js/offline.js">%>
+<script>
+	if ('CacheStorage' in window) {
+		caches.open('funda-v1-pages')
+			.then(caches => console.log(caches));
+	}
+</script>
