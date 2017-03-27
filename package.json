@@ -26,8 +26,8 @@
     "watchify": "^3.9.0"
   },
   "scripts": {
-    "start": "npm run server & npm run watch",
-    "server": "nodemon --harmony_array_includes src/server/app.js",
+    "dev": "npm start & npm run watch",
+    "start": "nodemon --harmony_array_includes src/server/app.js",
     "production": "npm run build && node --harmony_array_includes src/server/app.js",
     "expose": "ngrok http 3000",
     "js:app": "browserify src/client/js/app.js > build/client/js/bundle.js -t [ babelify --presets [es2015] ] -t [ browserify-versionify ]",
