@@ -1,24 +1,53 @@
-self.addEventListener('install', event => event.waitUntil(
-	caches.open('funda-v1-core')
-	.then(cache => cache.addAll([
-		'/css/app.css',
-		'/js/bundle.js',
-	]))
-	.then(self.skipWaiting())
-));
+serviceWorker = {
+	init() {
+		this.bindEvents();
+	},
+	bindEvents() {
+		self.addEventListener('install', event => event.waitUntil(
+			caches.open('funda-v1-core')
+			.then(cache => cache.addAll([
+				'/css/app.css',
+				'/js/bundle.js',
+			]))
+			.then(self.skipWaiting())
+		));
 
-self.addEventListener('fetch', event => {
-	const request = event.request;
-	if (request.mode !== 'navigate') {
-		event.respondWith(
-			fetch(request)
-			.catch(err => fetchCoreFile(request.url))
-		);
+		self.addEventListener('fetch', event => {
+			const req = event.request;
+			if (req.mode === 'navigate') {
+				event.respondWith(
+					fetch(req)
+					.then(res => this.pages.cache(req, res))
+					.catch(err => this.pages.getCached(req))
+				);
+			} else {
+				event.respondWith(
+					fetch(req)
+					.catch(err => coreFiles.fetch(req.url))
+				);
+			}
+		});
+	},
+	coreFiles: {
+		fetch(url) {
+			return caches.open('funda-v1-core')
+			.then(cache => cache.match(url))
+			.then(response => response ? response : Promise.reject());
+		}
+	},
+	pages: {
+		cache(req, res) {
+			const clonedRes = res.clone();
+			caches.open('funda-v1-pages')
+				.then(cache => cache.put(req, clonedRes));
+			return res;
+		},
+		getCached(req) {
+			return caches.opne('funda-v1-pages')
+				.then(cache => cache.match(request))
+				.then(response => response ? response : Promise.reject());
+		}
 	}
-});
+};
 
-function fetchCoreFile(url) {
-	return caches.open('funda-v1-core')
-	.then(cache => cache.match(url))
-	.then(response => response ? response : Promise.reject());
-}
+serviceWorker.init();
