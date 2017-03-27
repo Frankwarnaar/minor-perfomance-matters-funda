@@ -29,7 +29,6 @@ serviceWorker = {
 				event.respondWith(
 					fetch(req)
 					.catch(err => this.coreFiles.fetch(req.url))
-					.catch(err => this.coreFiles.fetch('/offline/'))
 				);
 			}
 		});
