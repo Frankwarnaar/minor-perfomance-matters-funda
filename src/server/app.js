@@ -14,7 +14,7 @@ const detailsRouter = require('./routes/details');
 
 const config = require('../../cfg.js');
 
-if (!config.funda.key || !config.google.key || !config.geoNames.userName) {
+if (!config.funda.key || !config.google.key) {
 	throw new Error('Missing apikey in env.');
 }
 

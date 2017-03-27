@@ -16,10 +16,6 @@ const config = {
 			maps: 'https://maps.googleapis.com/maps/api/geocode/json',
 			roads: 'https://roads.googleapis.com/v1/nearestRoads'
 		}
-	},
-	geoNames: {
-		baseUrl: 'http://api.geonames.org/findNearbyStreetsOSMJSON?formatted=true&style=full',
-		userName: process.env.GEONAMES_USERNAME
 	}
 };
 
