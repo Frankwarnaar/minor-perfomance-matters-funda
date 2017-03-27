@@ -29,7 +29,7 @@ app.use('/search', searchRouter);
 app.use('/details', detailsRouter);
 
 app.get('/sw.js', (req, res) => {
-	res.sendFile('client/js/sw.js', {root: './src'});
+	res.sendFile('client/js/sw.js', {root: './build'});
 });
 
 app.get('/', (req, res) => {

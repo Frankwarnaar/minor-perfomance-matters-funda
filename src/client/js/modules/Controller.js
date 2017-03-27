@@ -30,7 +30,6 @@ class Controller {
 
 		if (this.app.$.modalClose) {
 			this.app.$.modalClose.addEventListener('click', () => {
-				console.log(this.app.view);
 				this.app.view.closeModal();
 			});
 		}
