@@ -28,6 +28,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/search', searchRouter);
 app.use('/details', detailsRouter);
 
+app.get('/sw.js', (req, res) => {
+	res.sendFile('client/js/sw.js', {root: './src'});
+});
+
 app.get('/', (req, res) => {
 	res.render("index", {
 		critical: 'index'

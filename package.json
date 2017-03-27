@@ -23,16 +23,20 @@
     "watchify": "^3.9.0"
   },
   "scripts": {
-	"start": "npm run server & npm run watch",
-	"server": "nodemon --harmony_array_includes src/server/app.js",
+    "start": "npm run server & npm run watch",
+    "server": "nodemon --harmony_array_includes src/server/app.js",
     "production": "npm run build && node --harmony_array_includes src/server/app.js",
     "expose": "ngrok http 3000",
-    "js": "browserify src/client/js/app.js > build/client/js/bundle.js -t [ babelify --presets [es2015] ]",
-    "watch:js": "watchify src/client/js/app.js --debug -o build/client/js/bundle.js -t [ babelify --presets [es2015] ]",
+    "js:app": "browserify src/client/js/app.js > build/client/js/bundle.js -t [ babelify --presets [es2015] ]",
+    "js:sw": "browserify src/client/js/sw.js > build/client/js/sw.js -t [ babelify --presets [es2015] ]",
+    "js": "js:app && js:sw",
+    "watch:js": "npm run watch:js:app & npm run watch:js:sw",
+    "watch:js:app": "watchify src/client/js/app.js --debug -o build/client/js/bundle.js -t [ babelify --presets [es2015] ]",
+    "watch:js:sw": "watchify src/client/js/sw.js --debug -o build/client/js/sw.js -t [ babelify --presets [es2015] ]",
     "less": "lessc src/client/styles/app.less build/client/css/app.css",
     "watch:less": "less-watch-compiler ./src/client/styles build/client/css app.less",
-	"build": "npm run less && npm run js",
-	"watch": "npm run watch:js & npm run watch:less"
+    "build": "npm run less && npm run js",
+    "watch": "npm run watch:js & npm run watch:less"
   },
   "repository": {
     "type": "git",
