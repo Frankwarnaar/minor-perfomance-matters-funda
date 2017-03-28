@@ -34,6 +34,10 @@ app.get('/sw.js', (req, res) => {
 	res.sendFile('client/js/sw.js', {root: './build'});
 });
 
+app.get('/manifest.json', (req, res) => {
+	res.sendFile('client/manifest.json', {root: './src'});
+});
+
 app.get('/offline', (req, res) => {
 	res.render('offline', {
 		critical: 'index'

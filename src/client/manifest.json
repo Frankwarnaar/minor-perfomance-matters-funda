@@ -1,0 +1,17 @@
+{
+	"short_name": "Funda",
+	"name": "Funda - Search houses",
+	"start_url": "/?homescreen=1",
+	"display": "standalone",
+	"theme_color": "#F7A100",
+	"background_color": "#ffffff",
+	"icons": [{
+		"src": "img/icons/favicon.ico",
+		"sizes": "32x32",
+		"type": "image/ico"
+		}, {
+		"src": "img/icons/apple-touch-icon.png",
+		"sizes": "180x180",
+		"type": "image/png"
+	}]
+}
