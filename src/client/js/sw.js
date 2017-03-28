@@ -11,6 +11,7 @@ serviceWorker = {
 				'/fonts/proximanova/proximanova-regular.woff2',
 				'/fonts/proximanova/proximanova-semibold.woff2',
 				'/img/logos/funda.svg',
+				'/manifest.json',
 				'/offline/'
 			]))
 			.then(self.skipWaiting())
@@ -29,6 +30,7 @@ serviceWorker = {
 				event.respondWith(
 					fetch(req)
 					.catch(err => this.coreFiles.fetch(req.url))
+					.catch(err => this.coreFiles.fetch('/offline/'))
 				);
 			}
 		});

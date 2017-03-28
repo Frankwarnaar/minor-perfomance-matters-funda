@@ -31,7 +31,7 @@ app.use('/search', searchRouter);
 app.use('/details', detailsRouter);
 
 app.get('/sw.js', (req, res) => {
-	res.sendFile('client/js/sw.js', {root: './build'});
+	res.sendFile('client/js/sw.js', {root: './src'});
 });
 
 app.get('/manifest.json', (req, res) => {
