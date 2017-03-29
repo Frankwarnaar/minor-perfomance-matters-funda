@@ -103,7 +103,7 @@ After:
 
 I reduced the first paint time from ```515ms``` to ```366ms```. This is an improvement of ```40,7%```.
 
-### Gzip [feature/gzip](https://github.com/Frankwarnaar/minor-perfomance-matters-funda/commits/feature/gzip)
+### Gzip [feature/gzip](https://github.com/Frankwarnaar/minor-perfomance-matters-funda/tree/feature/gzip)
 Before:
 ![Before](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/esmangle/before.png)
 
@@ -112,7 +112,7 @@ After:
 
 I enabled gzip compression on my express server. This reduced the transfer size of my html, js, css and images with ```65%```, according to [Page Speed Insigh](https://developers.google.com/speed/pagespeed/insights/).
 
-### Mangled javascript [feature/minify-js](https://github.com/Frankwarnaar/minor-perfomance-matters-funda/commits/feature/minify-js)
+### Mangled javascript [feature/minify-js](https://github.com/Frankwarnaar/minor-perfomance-matters-funda/tree/feature/minify-js)
 Before:
 ![Before](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/esmangle/before.png)
 
@@ -121,7 +121,7 @@ After:
 
 I minified and mangled my javascript. This reduced the size of my bundled javascript from ```10.2kb``` to ```7.2kb```. This is an improvement of ```41.7%```. Besides that, mangling and minifying my javascript made the bundle load ```200ms``` faster. (```374ms```, ```174ms``` after). This is an improvement of ```114.9%```.
 
-### Service worker [feature/service-worker](https://github.com/Frankwarnaar/minor-perfomance-matters-funda/commits/feature/service-worker)
+### Service worker [feature/service-worker](https://github.com/Frankwarnaar/minor-perfomance-matters-funda/tree/feature/service-worker)
 Before (second load):
 ![Before](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/sw/before.png)
 
