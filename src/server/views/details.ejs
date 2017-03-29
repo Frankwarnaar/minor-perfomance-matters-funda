@@ -19,7 +19,8 @@
 					<% if (source.Url.includes('middel')) { %>
 						<% if (bigPic.length > 0) { %>
 							<a href="<%= bigPic[bigPic.length - 1].Url %>">
-								<img src="<%= source.Url %>" alt="<%= object.Adres %>">
+								<img data-original="<%= source.Url %>" alt="<%= object.Adres %>">
+								<noscript><img src="<%= source.Url %>" alt="<%= object.Adres %>"></noscript>
 							</a>
 						<% } %>
 					<% } %>

@@ -5,7 +5,18 @@
 	<ul class="results-list">
 		<% objects.map(object => { %>
 			<li data-id="<%= object.Id %>">
-			<img src="<%= object.FotoLarge %>" alt="<%= object.Adres %>">
+			<picture>
+				<source media="(min-width: 66em)" data-original-set="<%= object.FotoLarge %>">
+				<source media="(min-width: 48em)" data-original-set="<%= object.FotoMedium %>">
+				<img data-original="<%= object.FotoLarge %>" alt="<%= object.Adres %>">
+			</picture>
+			<noscript>
+				<picture>
+					<source media="(min-width: 66em)" srcset="<%= object.FotoLarge %>">
+					<source media="(min-width: 48em)" srcset="<%= object.FotoMedium %>">
+					<img data-original="<%= object.FotoLarge %>" alt="<%= object.Adres %>">
+				</picture>
+			</noscript>
 			<a href="/details/<%= object.Id %>/<%= object.Koopprijs ? 'koop' : 'huur' %>"><h2><%= object.Adres %></h2></a>
 			<span><strong>€
 				<%= object.Koopprijs ? object.Koopprijs.toLocaleString('currency') : '' %>

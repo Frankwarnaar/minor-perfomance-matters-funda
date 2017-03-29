@@ -1,8 +1,9 @@
-const Controller = require('./Controller.js');
-const View = require('./View.js');
 
 class App {
 	constructor() {
+		const Controller = require('./Controller.js');
+		const View = require('./View.js');
+
 		this.$ = {
 			body: document.querySelector('body'),
 			escapeHatch: document.querySelector('body > header a'),
@@ -35,6 +36,10 @@ class App {
 
 	init() {
 		this.controller.init();
+
+		const lazyload = new LazyLoad({
+			effect: 'fadeIn'
+		});
 	}
 }
 
