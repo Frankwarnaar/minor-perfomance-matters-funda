@@ -11,6 +11,7 @@ const baseDir = 'build/client';
 
 const searchRouter = require('./routes/search');
 const detailsRouter = require('./routes/details');
+const apiRouter = require('./routes/api');
 
 const config = require('../../cfg.js');
 
@@ -29,6 +30,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 // Connect the routers to routes
 app.use('/search', searchRouter);
 app.use('/details', detailsRouter);
+app.use('/api', apiRouter);
 
 app.get('/sw.js', (req, res) => {
 	res.sendFile('client/js/sw.js', {root: './build'});
