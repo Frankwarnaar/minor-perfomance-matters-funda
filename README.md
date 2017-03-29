@@ -132,18 +132,22 @@ I setup a serviceworker, to cache my static files, pages and images. On the seco
 
 ### 5.Picture elements for responsive images [feature/lazyload](https://github.com/Frankwarnaar/minor-perfomance-matters-funda/tree/feature/lazyload)
 Before:
+
 ![Before](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/picture/before.png)
 
 After:
+
 ![after](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/picture/after.png)
 
 With the picture element I made sure the user doesn't load a bigger image than necessary. On smaller screens, this reduced the total transer size from ```1020kb``` to ```340kb```. This is a reducement of ```66,7%```. The transfer time was reduced from ```10.91s``` to ```3.69s```. This is a reducement of ```66,2%```. 
 
 ### 6.Lazyloading images [feature/lazyload](https://github.com/Frankwarnaar/minor-perfomance-matters-funda/tree/feature/lazyload)
 Before:
+
 ![Before](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/lazyload/before.png)
 
 After:
+
 ![after](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/lazyload/after.png)
 
 With the library [Lazyload](http://verlok.github.io/lazyload/), I reduced the images being loaded instantly. Now only the images are getting loaded that are (almost) in the viewport. On mobile, this reduced the total transfer size from ```913kb``` to ```206kb```. This is a reducement of `77,4%`. The page load reduced from ```10.41s``` to `4.71s`. This is a reducement of `54,8%`.
