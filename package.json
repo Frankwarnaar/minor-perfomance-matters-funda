@@ -23,6 +23,7 @@
     "less-monitor": "^0.2.0",
     "less-watch-compiler": "^1.4.2",
     "ngrok": "^2.2.6",
+    "nodemon": "^1.11.0",
     "uglify-js": "mishoo/UglifyJS2#harmony",
     "watchify": "^3.9.0"
   },
