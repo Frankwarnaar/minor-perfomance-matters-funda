@@ -19,6 +19,7 @@
     "browserify": "^14.1.0",
     "browserify-versionify": "^1.0.6",
     "cli-watch": "^1.0.6",
+    "imagemin-cli": "^3.0.0",
     "less": "^2.7.2",
     "less-monitor": "^0.2.0",
     "less-plugin-clean-css": "^1.5.1",
@@ -42,6 +43,9 @@
     "watch:js:sw": "watch -f src/client/js/sw.js -r 'npm run js:sw:dev'",
     "less": "lessc src/client/styles/app.less build/client/css/app.css --clean-css",
     "watch:less": "less-watch-compiler ./src/client/styles build/client/css app.less",
+    "images:logos": "imagemin src/client/img/logos/* --out-dir build/client/img/logos",
+    "images:icons": "imagemin src/client/img/icons/* --out-dir build/client/img/icons",
+    "images": "npm run images:logos & npm run images:icons",
     "build": "npm run less && npm run js",
     "watch": "npm run watch:js & npm run watch:less"
   },
