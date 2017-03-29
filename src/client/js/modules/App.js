@@ -5,6 +5,7 @@ class App {
 	constructor() {
 		this.$ = {
 			body: document.querySelector('body'),
+			escapeHatch: document.querySelector('body > header a'),
 			footer: document.getElementById('footer'),
 			lat: document.getElementById('lat'),
 			long: document.getElementById('long'),
