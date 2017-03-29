@@ -45,6 +45,11 @@
 
 		img {
 			width: 100%;
+			min-height: ~"calc((100vw - 2rem) * .667)";
+
+			@media @q-md-min {
+				min-height: ~"calc((100vw - 2rem) / 3 * .667)";
+			}
 		}
 
 		span {

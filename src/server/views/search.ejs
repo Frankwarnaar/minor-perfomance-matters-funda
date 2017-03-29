@@ -14,7 +14,7 @@
 				<picture>
 					<source media="(min-width: 66em)" srcset="<%= object.FotoLarge %>">
 					<source media="(min-width: 48em)" srcset="<%= object.FotoMedium %>">
-					<img data-original="<%= object.FotoLarge %>" alt="<%= object.Adres %>">
+					<img src="<%= object.FotoLarge %>" alt="<%= object.Adres %>">
 				</picture>
 			</noscript>
 			<a href="/details/<%= object.Id %>/<%= object.Koopprijs ? 'koop' : 'huur' %>"><h2><%= object.Adres %></h2></a>

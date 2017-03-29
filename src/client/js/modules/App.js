@@ -38,7 +38,8 @@ class App {
 		this.controller.init();
 
 		const lazyload = new LazyLoad({
-			effect: 'fadeIn'
+			effect: 'fadeIn',
+			threshold: 100,
 		});
 	}
 }

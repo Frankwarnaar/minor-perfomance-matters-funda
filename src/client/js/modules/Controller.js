@@ -1,3 +1,5 @@
+const routie = require('../vendor/routie.min.js');
+
 class Controller {
 	constructor(app) {
 		this.app = app;
