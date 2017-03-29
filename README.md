@@ -152,4 +152,13 @@ After:
 
 With the library [Lazyload](http://verlok.github.io/lazyload/), I reduced the images being loaded instantly. Now only the images are getting loaded that are (almost) in the viewport. On mobile, this reduced the total transfer size from ```913kb``` to ```206kb```. This is a reducement of `77,4%`. The page load reduced from ```10.41s``` to `4.71s`. This is a reducement of `54,8%`.
 
+### 7.Cache static files [feature/caching](https://github.com/Frankwarnaar/minor-perfomance-matters-funda/tree/feature/caching)
+Before:
 
+![Before](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/caching/before.png)
+
+After:
+
+![after](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/caching/after.png)
+
+With adding a maxAge to my static files, I made sure they were cached on the browser. Besides that I fingerprinted my js and css, to make sure users won't get stuck with an old version of them.
