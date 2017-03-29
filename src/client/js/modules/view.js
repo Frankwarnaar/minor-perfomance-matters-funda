@@ -13,11 +13,21 @@ class View {
 		this.app.$.modalImage.setAttribute('src', url);
 		this.app.$.body.classList.add('no-scroll');
 		this.showEl(this.app.$.modal, true);
+
+		this.disableLinks(true);
 	}
 
 	closeModal() {
+		this.disableLinks(false);
 		this.app.$.body.classList.remove('no-scroll');
 		this.app.view.showEl(this.app.$.modal, false);
+	}
+
+	disableLinks(disabled) {
+		this.app.$.escapeHatch.setAttribute('tabindex', disabled ? '-1' : '0');
+		Array.from(this.app.$.carouselImages).forEach($thumb => {
+			$thumb.setAttribute('tabindex', disabled ? '-1' : '0');
+		});
 	}
 
 	showEl($el, show) {
