@@ -128,4 +128,4 @@ Before (second load):
 After (second load):
 ![after](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/sw/after.png)
 
-I setup a serviceworker, to cache my static files, pages and images. On the second time of loading my overview page, this reduced the total transfer size from ```1.4MB``` to ```11.5 kb```. This is a reducement of ```99.2%```. Besides that, the service worker makes visited pages offline available.
+I setup a serviceworker, to cache my static files, pages and images. On the second time of loading my overview page, this reduced the total transfer size from ```1.4MB``` to ```11.5 kb```. This is a reducement of ```99.2%```. Besides that, the service worker makes visited pages offline available. The total load time reduced from ```15.57s``` to ```1.47s```. This is a reducement of ```90,5%```.
