@@ -4,6 +4,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const compression = require('compression');
+const staticAsset = require('static-asset');
 
 const app = express();
 const port = 3000;
@@ -23,7 +24,10 @@ app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'ejs');
 
 app.use(compression());
-app.use(express.static(baseDir));
+app.use(staticAsset(baseDir));
+app.use(express.static(baseDir, {
+	maxAge: 31557600000 // one year
+}));
 app.use(bodyParser.urlencoded({extended: true}));
 
 // Connect the routers to routes
