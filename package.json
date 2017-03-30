@@ -31,24 +31,7 @@
     "watchify": "^3.9.0"
   },
   "scripts": {
-    "dev": "npm start & npm run watch",
-    "start": "npm run production",
-    "production": "npm run build && node --harmony_array_includes src/server/app.js",
-    "expose": "ngrok http 3000",
-    "js:app": "browserify src/client/js/app.js > build/client/js/bundle.js -t [ babelify --presets [es2015] ] -t [ uglifyify --mangle --compress [ --sequences --dead_code --booleans ] ]",
-    "js:sw:prod": "uglifyjs src/client/js/sw.js --o build/client/js/sw.js --mangle",
-    "js:sw:dev": "uglifyjs src/client/js/sw.js --o build/client/js/sw.js --source-map-inline",
-    "js": "npm run js:app && npm run js:sw:prod",
-    "watch:js": "npm run watch:js:app & npm run watch:js:sw",
-    "watch:js:app": "watchify src/client/js/app.js --debug -o build/client/js/bundle.js -t [ babelify --presets [es2015] ]",
-    "watch:js:sw": "watch -f src/client/js/sw.js -r 'npm run js:sw:dev'",
-    "less": "lessc src/client/styles/app.less build/client/css/app.css --clean-css",
-    "watch:less": "less-watch-compiler ./src/client/styles build/client/css app.less",
-    "images:logos": "imagemin src/client/img/logos/* --out-dir build/client/img/logos",
-    "images:icons": "imagemin src/client/img/icons/* --out-dir build/client/img/icons",
-    "images": "npm run images:logos & npm run images:icons",
-    "build": "npm run less && npm run js",
-    "watch": "npm run watch:js & npm run watch:less"
+    "start": "node --harmony_array_includes src/server/app.js"
   },
   "repository": {
     "type": "git",
