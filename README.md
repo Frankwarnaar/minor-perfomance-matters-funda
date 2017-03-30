@@ -162,3 +162,10 @@ After:
 ![after](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/caching/after.png)
 
 With adding a maxAge to my static files, I made sure they were cached on the browser. Besides that I fingerprinted my js and css, to make sure users won't get stuck with an old version of them.
+
+## Service worker
+I implemented a service worker to achieve two job stories:
+1. When I'm offline, I want to watch pages I've already visited, so I can always watch pages that are important for me.
+2. When I've once visited a page, I want to cache the static files, so the load time reduces.
+
+[Jump back to performance improvements of the Serive Worker](https://github.com/Frankwarnaar/minor-perfomance-matters-funda#4service-worker-featureservice-worker)
