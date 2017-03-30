@@ -31,7 +31,13 @@
     "watchify": "^3.9.0"
   },
   "scripts": {
-    "start": "node --harmony_array_includes src/server/app.js"
+    "start": "node --harmony_array_includes src/server/app.js",
+    "production": "npm run build && node --harmony_array_includes src/server/app.js",
+    "js:app": "browserify src/client/js/app.js > build/client/js/bundle.js -t [ babelify --presets [es2015] ] -t [ uglifyify --mangle --compress [ --sequences --dead_code --booleans ] ]",
+    "js:sw:prod": "uglifyjs src/client/js/sw.js --o build/client/js/sw.js --mangle",
+    "js": "npm run js:app && npm run js:sw:prod",
+    "less": "lessc src/client/styles/app.less build/client/css/app.css --clean-css",
+    "build": "npm run less && npm run js"
   },
   "repository": {
     "type": "git",
