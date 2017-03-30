@@ -2,6 +2,8 @@
 
 This project is a progressive web app made for my Minor Everything Web, for Funda. You can search houses available for buying with the app.
 
+[demo](http://ss-funda.herokuapp.com/)
+
 ## Installation
 
 ### Environment variables
