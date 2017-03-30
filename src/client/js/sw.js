@@ -10,7 +10,6 @@ serviceWorker = {
 				'/js/bundle.js',
 				'/fonts/proximanova/proximanova-regular.woff2',
 				'/fonts/proximanova/proximanova-semibold.woff2',
-				'/img/logos/funda.svg',
 				'/manifest.json',
 				'/offline/'
 			]))
