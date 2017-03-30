@@ -99,7 +99,7 @@ After:
 
 With adding a maxAge to my static files, I made sure they were cached on the browser. Besides that I fingerprinted my js and css, to make sure users won't get stuck with an old version of them.
 
-### 8. Flash of invisible text [feature/fout](https://github.com/Frankwarnaar/minor-perfomance-matters-funda/tree/feature/caching)
+### 8. Flash of invisible text [feature/foit](https://github.com/Frankwarnaar/minor-perfomance-matters-funda/tree/feature/foit)
 Before:
 
 ![Before](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/fout/before.png)
