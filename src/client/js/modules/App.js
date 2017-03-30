@@ -22,6 +22,17 @@ class App {
 		this.init();
 	}
 
+	init() {
+		this.controller.init();
+		this.observeFonts();
+
+		const lazyload = new LazyLoad({
+			effect: 'fadeIn',
+			threshold: 100,
+		});
+
+	}
+
 	getCoords() {
 		return new Promise((resolve, reject) => {
 			if (navigator.geolocation) {
@@ -34,13 +45,17 @@ class App {
 		});
 	}
 
-	init() {
-		this.controller.init();
-
-		const lazyload = new LazyLoad({
-			effect: 'fadeIn',
-			threshold: 100,
-		});
+	observeFonts() {
+		const html = document.documentElement;
+		if ('Promise' in navigator) {
+			const regular = new FontFaceObserver('proximanova', {weight: 400}).load();
+			const semibold = new FontFaceObserver('proximanova', {weight: 600}).load();
+			Promise.all([regular, semibold]).then(() => {
+				html.classList.add('fonts-loaded');
+			});
+		} else {
+			html.classList.add('fonts-loaded');
+		}
 	}
 }
 
