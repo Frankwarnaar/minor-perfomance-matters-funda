@@ -7,7 +7,7 @@ const compression = require('compression');
 const staticAsset = require('static-asset');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const baseDir = 'build/client';
 
 const searchRouter = require('./routes/search');

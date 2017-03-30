@@ -10,10 +10,9 @@ You need an ```.env``` file with a Funda API key and a Google API key. There is 
 
 ```
 $ npm install
-$ npm run production
 ```
 
-## Scripts
+## Building and deploying
 
 ### General scripts
 Build all the javascript files in the project and run a server on ```localhost:3000```.
@@ -26,73 +25,8 @@ Start watching javascript files and less files. Rebundle or rebuild them on chan
 $ npm run dev
 ```
 
-Build all the files needed for production
-```
-$ npm run build
-```
-
-Watch ```.js``` files and ```.less``` files for changes.
-```
-$ npm run watch
-```
-
-Get the project on a public domain running.
-```
-$ npm run expose
-```
-
-### Javascript
-
-#### Build once
-Build all the javascript files in the project
-```
-$ npm run js
-```
-
-Build the app javascript
-```
-$ npm run js:app
-```
-
-Build the service worker with sourcemaps
-```
-$ npm run js:sw:dev
-```
-
-Build the service worker without sourcemaps
-```
-$ npm run js:sw:prod
-```
-
-#### Watch
-Watch all the javascript files in the project, build on changes.
-```
-$ npm run watch:js
-```
-
-Watch the app javascript for changes, then build
-```
-$ npm run watch:js:app
-```
-
-Watch the service worker for changes, then build
-```
-$ npm run watch:js:sw
-```
-
-### Less
-
-Compile less once
-```
-$ npm run less
-```
-
-Watch less files for changes, then build
-```
-npm run watch:less
-```
-
 ## Audits
+All the local checks are done on throttling with regular 3g (100ms, 750kb/s, 250kb/s).
 
 ### 1.Critical css [feature/critical-css](https://github.com/Frankwarnaar/minor-perfomance-matters-funda/tree/feature/critical-css)
 Before:
@@ -162,6 +96,59 @@ After:
 ![after](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/caching/after.png)
 
 With adding a maxAge to my static files, I made sure they were cached on the browser. Besides that I fingerprinted my js and css, to make sure users won't get stuck with an old version of them.
+
+### Conclusion
+#### Network
+Before:
+
+![Before all](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/before_all.png)
+
+After:
+
+![After all](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/after_all.png)
+
+I reduced the total transfer size from `1.5mb` to `165kb` (`89%` less). The full page loaded in `2.49s` after the improvements. Before this was `17.04s`. This is `85.4%` quicker.
+
+##### Second load
+
+Before:
+
+![Before all](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/before_2nd-load.png)
+
+After:
+
+![After all](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/after_2nd_load.png)
+
+I reduced the total transfer size from `237kb` to `4.4kb` (`98.1%` less). The full page loaded in `1.51s` after the improvements. Before this was `3.46s`. This is `56.3%` quicker.
+
+#### Google Page speed insights
+Before
+![Page speed insights - mobile](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/before_psi_mob.png)
+![Page speed insights - desktop](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/before_psi_desk.png)
+
+After
+![Page speed insights - mobile](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/after_psi_mob.png)
+![Page speed insights - desktop](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/after_psi_desk.png)
+
+I improved the score on mobile from `83/100` to `100/100`. On desktop I improved the score from `93/100` to `100/100`.
+
+#### Web page test
+Before:
+![Web page test - before](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/before_wpt.png)
+
+After:
+![Web page test - before](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/before_wpt.png)
+
+I improved caching static from `0%` to `80%`. Besides, i Improved the CDN detected from `0%` to `33%`.
+
+#### First paint
+Before:
+![Before](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/critical_css/before.png)
+
+After:
+![after](https://raw.githubusercontent.com/Frankwarnaar/minor-perfomance-matters-funda/master/improvements/critical_css/after.png)
+
+I reduced the first paint time from ```515ms``` to ```366ms```. This is an improvement of ```40,7%```.
 
 ## Service worker
 I implemented a service worker to achieve two job stories:
