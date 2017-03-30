@@ -8,6 +8,7 @@ const staticAsset = require('static-asset');
 
 const app = express();
 const port = process.env.PORT || 3000;
+const host = process.env.HOST ||'0.0.0.0';
 const baseDir = 'build/client';
 
 const searchRouter = require('./routes/search');
@@ -54,6 +55,6 @@ app.get('/', (req, res) => {
 	});
 });
 
-app.listen(port, (err) => {
+app.listen(port, host, (err) => {
 	err ? console.error(err) : console.log(`app running on http://localhost:${port}`);
 });
